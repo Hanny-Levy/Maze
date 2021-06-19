@@ -11,14 +11,14 @@ public class RowBorders extends JPanel {
     private int y;
     private int width;
     private int height;
-    private int space;
+
 
     public RowBorders() {
         row1 = new Brick[Definitions.Row];
         row2 = new Brick[Definitions.Row];
         row3 = new Brick[Definitions.Row];
         row4 = new Brick[Definitions.Row];
-        this.space=300;
+
     }
 
     @Override
@@ -39,12 +39,12 @@ public class RowBorders extends JPanel {
         this.height=Definitions.MAZE_HEIGHT;
         this.row1[0]=new Brick(this.x,this.y,this.width,this.height);
         for (int i=1 ; i<this.row1.length;i++) {
-        this.row1[i]=new Brick(this.x+this.space*i,this.y,this.width*i,this.height);
+        this.row1[i]=new Brick(this.x+Definitions.space*i,this.y,this.width*i,this.height);
         }
     }
 
         public void printRow1(Graphics g){
-        setRow1();
+        this.setRow1();
             for (int i=0 ; i<this.row1.length;i++)
                 this.row1[i].print(g);
         }
@@ -55,9 +55,9 @@ public class RowBorders extends JPanel {
             this.width=this.row1[0].getWidth();
             this.height=this.getRow1()[0].getHeight();
             for (int i=0 ; i<this.row2.length;i++){
-                this.row2[i]=new Brick(this.x+space*i,this.y,this.width*i,this.height);
+                this.row2[i]=new Brick(this.x+Definitions.space*i,this.y,this.width*i,this.height);
             }
-            this.row2[0].setWidth(this.space);
+            this.row2[0].setWidth(Definitions.space);
             this.row2[1].setX(this.row2[1].getX()+Definitions.MAZE_WIDTH_BORDERS/2);
             this.row2[2].setX(Definitions.MAZE_WIDTH-Definitions.MAZE_HEIGHT);
             this.row2[2].setWidth(this.width);
@@ -74,12 +74,13 @@ public class RowBorders extends JPanel {
             this.width=this.row1[0].getWidth();
             this.height=this.getRow1()[0].getHeight();
             for (int i=0 ; i<this.row3.length;i++){
-                this.row3[i]=new Brick(i*this.x+space,this.y,this.width*i,this.height);
+                this.row3[i]=new Brick(i*this.x+Definitions.space,this.y,this.width*i,this.height);
             }
             this.row3[0].setX(Definitions.MAZE_STARTING_X);
             this.row3[0].setWidth(this.width);
             this.row3[2].setWidth(this.row3[2].getWidth()+72);
-
+            this.row3[1].setX(this.x*2+40);
+            this.row3[1].setWidth(this.row1[1].getWidth()+31);
     }
     public void printRow3(Graphics g){
         setRow3();
@@ -96,8 +97,10 @@ public class RowBorders extends JPanel {
            for (int i=0 ; i<this.row4.length;i++){
                this.row4[i]=new Brick(this.x,this.y,this.width,this.height);
            }
-           this.row4[1].setX(Definitions.MAZE_WIDTH_BORDERS+this.space);
-           this.row4[0].setX(Definitions.MAZE_STARTING_X+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS);
+           this.row4[1].setX(Definitions.MAZE_WIDTH_BORDERS+Definitions.space+Definitions.MAZE_WIDTH_BORDERS/2);
+           this.row4[1].setY(this.row4[1].getY()+8);
+           this.row4[0].setY(this.row4[1].getY()+8);
+           this.row4[0].setX(Definitions.MAZE_WIDTH_BORDERS*2+60-(this.width));//Definitions.MAZE_STARTING_X+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS
 
 
        }

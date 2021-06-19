@@ -21,6 +21,7 @@ public class Definitions {
     public static final int MAZE_WIDTH_BORDERS=MAZE_WIDTH/6 ;
 
     public static final int Row=3;
+    public static int space=300;
 
 
 

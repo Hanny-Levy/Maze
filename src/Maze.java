@@ -4,32 +4,20 @@ import java.awt.*;
 public class Maze extends JPanel {
     private Brick[] outBorders;
     private RowBorders rowBorders;
-    private Brick defaultBrick;
+    private ColumnBorders columnBorders;
 
     public Maze(){ outBorders=new Brick[4];
     this.rowBorders=new RowBorders();
     setOutBorders();
+    this.columnBorders=new ColumnBorders();
     }
 
     @Override
     public void paint(Graphics graphics) {
         super.paint(graphics);
-        printOutBorders(graphics);
-        rowBorders.print(graphics);
-
-
-        //ציור עמודות שורה 1
-        graphics.fillRect(Definitions.MAZE_WIDTH_BORDERS+Definitions.MAZE_WIDTH_BORDERS,Definitions.MAZE_STARTING_Y,Definitions.MAZE_HEIGHT,Definitions.MAZE_WIDTH_BORDERS+35);
-        graphics.fillRect(Definitions.MAZE_WIDTH_BORDERS+480,Definitions.MAZE_STARTING_Y,Definitions.MAZE_HEIGHT,Definitions.MAZE_WIDTH_BORDERS/2);
-
-        //ציור עמודות שורה 2
-        graphics.fillRect(Definitions.MAZE_WIDTH_BORDERS,Definitions.MAZE_STARTING_Y+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS,Definitions.MAZE_HEIGHT,Definitions.MAZE_WIDTH_BORDERS/2+20);
-        graphics.fillRect(Definitions.MAZE_WIDTH_BORDERS+300+Definitions.MAZE_WIDTH_BORDERS/2,Definitions.MAZE_STARTING_Y+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS,Definitions.MAZE_HEIGHT,Definitions.MAZE_WIDTH_BORDERS/2+20);
-        graphics.fillRect(Definitions.MAZE_WIDTH_BORDERS+600,Definitions.MAZE_STARTING_Y+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS,Definitions.MAZE_HEIGHT,Definitions.MAZE_WIDTH_BORDERS/2+20);
-        graphics.fillRect(Definitions.MAZE_WIDTH_BORDERS/2+Definitions.MAZE_WIDTH_BORDERS+601,Definitions.MAZE_STARTING_Y+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS,Definitions.MAZE_HEIGHT,(Definitions.MAZE_STARTING_Y+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS*3)-(Definitions.MAZE_STARTING_Y+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS));
-        graphics.fillRect(Definitions.MAZE_WIDTH-Definitions.MAZE_HEIGHT,Definitions.MAZE_STARTING_Y+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS *2,Definitions.MAZE_HEIGHT,Definitions.MAZE_WIDTH_BORDERS/2+20);
-
-
+        this.printOutBorders(graphics);
+        this.rowBorders.print(graphics);
+        this.columnBorders.print(graphics);
 
     }
 
