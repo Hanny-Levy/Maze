@@ -3,30 +3,19 @@ import java.awt.*;
 
 public class MazeScene extends JPanel {
     private ImageIcon maze ;
-    private JButton start;
-    private JButton pause ;
     private int moves ;
     private Beetle beetle;
+    private JLabel moveCounter;
 
     public MazeScene() {
     this.setDoubleBuffered(true);
     this.setLayout(null);
     this.setBackground(Color.WHITE);
-   // this.start = new JButton("START");
-   // this.pause = new JButton("PAUSE");
-   // this.start.setBounds(0,0,Definitions.BUTTON_WIDTH,Definitions.BUTTON_HEIGHT);
-    //this.pause.setBounds(Definitions.BOARD_WIDTH-Definitions.BUTTON_WIDTH,0,Definitions.BUTTON_WIDTH,Definitions.BUTTON_HEIGHT);
-    //this.add(start);
-   // start.addActionListener((e -> {
-//
-   //     start.setVisible(false);
-//
-   // }));
-  //  this.add(pause);
-  //      pause.addActionListener((e -> {
-  ///          pause.setVisible(false);
-//
-  //      }));
+    this.moveCounter = new JLabel("Moves: 0");
+    this.moveCounter.setBounds(Definitions.BUTTON_WIDTH+30 , 0, Definitions.MOVES_COUNTER_LABEL_WIDTH, Definitions.MOVES_COUNTER_LABEL_HEIGHT );
+
+        this.add(moveCounter);
+
 
     this.beetle=new Beetle(Definitions.BEETLE_STARTING_X,Definitions.BEETLE_STARTING_Y);
     this.maze=new ImageIcon("images/maze.png");
@@ -39,6 +28,7 @@ public class MazeScene extends JPanel {
 
                 repaint();
                 try {
+                    this.moveCounter.setText("Moves: " + this.beetle.getMoves() );
                     Thread.sleep(25);
                 }
                 catch (InterruptedException exception){

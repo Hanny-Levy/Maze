@@ -6,6 +6,7 @@ public class Brick extends JPanel {
     private int y;
     private int width;
     private int height;
+    private Rectangle rectangle;
 
 
     public Brick(int x, int y, int width, int height) {
@@ -13,6 +14,8 @@ public class Brick extends JPanel {
         this.y = y;
         this.width = width;
         this.height = height;
+        rectangle=new Rectangle(this.x,this.y,this.width,this.height);
+
     }
 
 

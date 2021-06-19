@@ -42,4 +42,17 @@ public class Maze extends JPanel {
         outBorders[i].print(graphics);
     }
 
-        }
+    public Brick[] getOutBorders() {
+        return outBorders;
+    }
+
+    public RowBorders getRowBorders() {
+        return rowBorders;
+    }
+
+    public ColumnBorders getColumnBorders() {
+        return columnBorders;
+    }
+}
+
+

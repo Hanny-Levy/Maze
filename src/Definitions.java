@@ -23,6 +23,9 @@ public class Definitions {
     public static final int Row=3;
     public static int space=300;
 
+    public static final int MOVES_COUNTER_LABEL_WIDTH=100;
+    public static final int MOVES_COUNTER_LABEL_HEIGHT = 50;
+
 
 
 

@@ -4,11 +4,13 @@ public class Beetle  {
     private ImageIcon beetle;
     private int x ;
     private int y ;
+    private int moves;
 
     public Beetle(int x , int y) {
         this.beetle=new ImageIcon("images/beetle.jpg");
         this.x =x ;
         this.y=y;
+        this.setMoves();
 
     }
 
@@ -16,6 +18,17 @@ public class Beetle  {
         this.beetle.paintIcon(mazeScene,graphics,x,y);
 
     }
+
+    private boolean canMove(Maze maze){
+       for (int i = 0 ; i<maze.getOutBorders().length;i++){
+                
+                return false;
+            }
+       return true;
+        }
+
+
+
 
     public void setBeetle(ImageIcon beetle) {
         this.beetle = beetle;
@@ -41,18 +54,28 @@ public class Beetle  {
         return y;
     }
     public void moveUp(){
-        this.y-=2;
+        this.y -= Definitions.BEETLE_HEIGHT/4;
+        moves++;
     }
 
     public void moveDown(){
-    this.y+=2;
+        this.y += Definitions.BEETLE_HEIGHT/4;
+        moves++;
     }
     public void moveRight(){
-    this.x+=2;
+        this.x += Definitions.BEETLE_WIDTH/4;
+        moves++;
     }
     public void moveLeft(){
-    this.x-=2;
+        this.x -= Definitions.BEETLE_WIDTH/4;
+        moves++;
     }
 
+    public int getMoves() {
+        return moves;
+    }
 
+    public void setMoves() {
+        this.moves = 0;
+    }
 }
