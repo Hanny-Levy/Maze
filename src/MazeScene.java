@@ -12,11 +12,11 @@ public class MazeScene extends JPanel {
     this.setDoubleBuffered(true);
     this.setLayout(null);
     this.setBackground(Color.WHITE);
-    this.start = new JButton("START");
+   // this.start = new JButton("START");
    // this.pause = new JButton("PAUSE");
-    this.start.setBounds(0,0,Definitions.BUTTON_WIDTH,Definitions.BUTTON_HEIGHT);
+   // this.start.setBounds(0,0,Definitions.BUTTON_WIDTH,Definitions.BUTTON_HEIGHT);
     //this.pause.setBounds(Definitions.BOARD_WIDTH-Definitions.BUTTON_WIDTH,0,Definitions.BUTTON_WIDTH,Definitions.BUTTON_HEIGHT);
-    this.add(start);
+    //this.add(start);
    // start.addActionListener((e -> {
 //
    //     start.setVisible(false);

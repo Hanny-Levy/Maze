@@ -18,7 +18,9 @@ public class Definitions {
     public static final int MAZE_ENDING_Y=550;
 
     public static final int MAZE_HEIGHT_BETWEEN_BORDERS =100;
-    public static final int MAZE_WIDTH_BORDERS=MAZE_WIDTH/5;
+    public static final int MAZE_WIDTH_BORDERS=MAZE_WIDTH/6 ;
+
+    public static final int Row=3;
 
 
 
