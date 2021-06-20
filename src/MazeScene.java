@@ -2,8 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MazeScene extends JPanel {
-    private ImageIcon maze ;
-    private int moves ;
+    private Maze maze ;
     private Beetle beetle;
     private JLabel moveCounter;
 
@@ -13,12 +12,10 @@ public class MazeScene extends JPanel {
     this.setBackground(Color.WHITE);
     this.moveCounter = new JLabel("Moves: 0");
     this.moveCounter.setBounds(Definitions.BUTTON_WIDTH+30 , 0, Definitions.MOVES_COUNTER_LABEL_WIDTH, Definitions.MOVES_COUNTER_LABEL_HEIGHT );
-
-        this.add(moveCounter);
-
+    this.add(moveCounter);
+    this.maze=new Maze();
 
     this.beetle=new Beetle(Definitions.BEETLE_STARTING_X,Definitions.BEETLE_STARTING_Y);
-    this.maze=new ImageIcon("images/maze.png");
     this.mainGameLoop();
     }
 
@@ -41,16 +38,16 @@ public class MazeScene extends JPanel {
 
     public void paint(Graphics graphics) {
         super.paint(graphics);
-       // this.maze.paintIcon(this,graphics,0,0);
-       // setMaze();
         beetle.paint(graphics,this);
-        new Maze().paint(graphics);
+        maze.paint(graphics);
     }
 
-    public void setMaze() {
-        Image image = maze.getImage() ;
-        Image newImage = image.getScaledInstance(Definitions.BOARD_WIDTH,Definitions.BOARD_HEIGHT,java.awt.Image.SCALE_SMOOTH);
-        this.maze=new ImageIcon(newImage);
+    public Maze getMaze() {
+        return maze;
+    }
+
+    public JLabel getMoveCounter() {
+        return moveCounter;
     }
 
     public Beetle getBeetle() {
