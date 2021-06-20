@@ -19,15 +19,6 @@ public class Beetle  {
 
     }
 
-    private boolean canMove(Maze maze){
-       for (int i = 0 ; i<maze.getOutBorders().length;i++){
-                
-                return false;
-            }
-       return true;
-        }
-
-
 
 
     public void setBeetle(ImageIcon beetle) {

@@ -6,9 +6,10 @@ public class Maze extends JPanel {
     private RowBorders rowBorders;
     private ColumnBorders columnBorders;
 
-    public Maze(){ outBorders=new Brick[4];
+    public Maze(){
+    outBorders=new Brick[4];
+    this.setOutBorders();
     this.rowBorders=new RowBorders();
-    setOutBorders();
     this.columnBorders=new ColumnBorders();
     }
 

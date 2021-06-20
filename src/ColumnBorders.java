@@ -19,6 +19,12 @@ public class ColumnBorders extends JPanel {
         this.column3=new Brick[4];
         this.column4=new Brick[3];
         this.column5=new Brick[1];
+        setColumn1();
+        setColumn2();
+        setColumn3();
+        setColumn4();
+        setColumn5();
+
     }
 
 

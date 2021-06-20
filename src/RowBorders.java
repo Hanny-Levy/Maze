@@ -3,10 +3,10 @@ import java.awt.*;
 import java.awt.event.HierarchyBoundsListener;
 
 public class RowBorders extends JPanel {
-    Brick[] row1;
-    Brick[] row2;
-    Brick[] row3;
-    Brick[] row4;
+    private Brick[] row1;
+    private Brick[] row2;
+    private Brick[] row3;
+    private Brick[] row4;
     private int x;
     private int y;
     private int width;
@@ -18,6 +18,11 @@ public class RowBorders extends JPanel {
         row2 = new Brick[Definitions.Row];
         row3 = new Brick[Definitions.Row];
         row4 = new Brick[Definitions.Row];
+        this.setRow1();
+        this.setRow2();
+        this.setRow3();
+        this.setRow4();
+
 
     }
 
@@ -28,6 +33,7 @@ public class RowBorders extends JPanel {
         this.printRow2(g);
         this.printRow3(g);
         this.printRow4(g);
+
     }
 
 
