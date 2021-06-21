@@ -106,7 +106,7 @@ public class RowBorders extends JPanel {
            this.row4[1].setX(Definitions.MAZE_WIDTH_BORDERS+Definitions.space+Definitions.MAZE_WIDTH_BORDERS/2);
            this.row4[1].setY(this.row4[1].getY()+8);
            this.row4[0].setY(this.row4[1].getY()+8);
-           this.row4[0].setX(Definitions.MAZE_WIDTH_BORDERS*2+60-(this.width));//Definitions.MAZE_STARTING_X+Definitions.MAZE_HEIGHT_BETWEEN_BORDERS
+           this.row4[0].setX(Definitions.MAZE_WIDTH_BORDERS*2+60-(this.width));
 
 
        }

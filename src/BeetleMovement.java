@@ -3,11 +3,12 @@ import java.awt.event.KeyListener;
 
 public class BeetleMovement implements KeyListener {
     private Beetle beetle;
+    private MazeScene mazeScene;
 
 
-
-    public BeetleMovement(Beetle beetle) {
+    public BeetleMovement(Beetle beetle,MazeScene mazeScene) {
         this.beetle =beetle;
+        this.mazeScene=mazeScene;
 
     }
 
@@ -17,21 +18,29 @@ public class BeetleMovement implements KeyListener {
 
     public void keyPressed(KeyEvent keyEvent) {
         int keyCode = keyEvent.getKeyCode();
-        if (keyCode == keyEvent.VK_RIGHT) {
+
+        if (keyCode==keyEvent.VK_RIGHT&&mazeScene.collision(this.beetle, mazeScene.getMaze())==false)
             this.beetle.moveRight();
-        }
-        if (keyCode == keyEvent.VK_LEFT) {
+
+        else  this.beetle.moveLeft();
+        if (keyCode == keyEvent.VK_LEFT&&mazeScene.collision(this.beetle, mazeScene.getMaze())==false)
             this.beetle.moveLeft();
-        }
-        if (keyCode == keyEvent.VK_DOWN) {
+
+        else this.beetle.moveRight();
+        if (keyCode == keyEvent.VK_DOWN&&mazeScene.collision(this.beetle, mazeScene.getMaze())==false)
             this.beetle.moveDown();
-        }
-        if (keyCode == keyEvent.VK_UP) {
+            else this.beetle.moveUp();
+
+        if (keyCode == keyEvent.VK_UP&&mazeScene.collision(this.beetle, mazeScene.getMaze())==false)
             this.beetle.moveUp();
-        }
+        else this.beetle.moveDown();
     }
 
     public void keyReleased(KeyEvent e) {
 
+    }
+
+    public Beetle getBeetle() {
+        return beetle;
     }
 }

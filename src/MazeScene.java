@@ -20,67 +20,67 @@ public class MazeScene extends JPanel {
     }
 
     public boolean collision(Beetle beetle , Maze maze){
-        Rectangle beetleRec= new Rectangle(beetle.getX(),beetle.getY(),Definitions.BEETLE_WIDTH,Definitions.BEETLE_HEIGHT);
+        Rectangle beetleRec= new Rectangle(beetle.getX(),beetle.getY(),this.beetle.getWidth(),this.beetle.getHeight());
            for (int i = 0; i < maze.getOutBorders().length; i++) {
               Rectangle mazeBrickRec = new Rectangle(maze.getOutBorders()[i].getX(), maze.getOutBorders()[i].getY(), maze.getOutBorders()[i].getWidth(), maze.getOutBorders()[i].getHeight());
                if (beetleRec.intersects(mazeBrickRec)){
                    return true;
                }
            }
-         //  for (int i = 0; i < maze.getRowBorders().getRow1().length; i++) {
-         //     Rectangle mazeBrickRec = new Rectangle(maze.getRowBorders().getRow1()[i].getX(), maze.getRowBorders().getRow1()[i].getY(), maze.getRowBorders().getRow1()[i].getWidth(), maze.getRowBorders().getRow1()[i].getHeight());
-          //     if (beetleRec.intersects(mazeBrickRec)){
-          //         return true;
-          //     }
-        //   }
-          // for (int i = 0; i < maze.getRowBorders().getRow2().length; i++) {
-          //    Rectangle  mazeBrickRec = new Rectangle(maze.getRowBorders().getRow2()[i].getX(), maze.getRowBorders().getRow2()[i].getY(), maze.getRowBorders().getRow2()[i].getWidth(), maze.getRowBorders().getRow2()[i].getHeight());
-           //    if (beetleRec.intersects(mazeBrickRec)){
-          //         return true;
-          //     }
-          // }
-         //  for (int i = 0; i < maze.getRowBorders().getRow3().length; i++) {
-         //     Rectangle mazeBrickRec = new Rectangle(maze.getRowBorders().getRow3()[i].getX(), maze.getRowBorders().getRow3()[i].getY(), maze.getRowBorders().getRow3()[i].getWidth(), maze.getRowBorders().getRow3()[i].getHeight());
-          //     if (beetleRec.intersects(mazeBrickRec)){
-         //          return true;
-         //      }
-         //  }
-        //   for (int i = 0; i < maze.getRowBorders().getRow4().length; i++) {
-        //      Rectangle mazeBrickRec = new Rectangle(maze.getRowBorders().getRow4()[i].getX(), maze.getRowBorders().getRow4()[i].getY(), maze.getRowBorders().getRow4()[i].getWidth(),maze.getRowBorders().getRow4()[i].getHeight());
-        //       if (beetleRec.intersects(mazeBrickRec)){
-        //           return true;
-        //       }
-        //   }
-        //   for (int i = 0; i < maze.getColumnBorders().getColumn1().length; i++) {
-        //     Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn1()[i].getX(), maze.getColumnBorders().getColumn1()[i].getY(), maze.getColumnBorders().getColumn1()[i].getWidth(), maze.getColumnBorders().getColumn1()[i].getHeight());
-         //      if (beetleRec.intersects(mazeBrickRec)){
-         //          return true;
-         //      }
-          // }
-         //  for (int i = 0; i < maze.getColumnBorders().getColumn2().length; i++) {
-         //     Rectangle  mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn2()[i].getX(), maze.getColumnBorders().getColumn2()[i].getY(), maze.getColumnBorders().getColumn2()[i].getWidth(), maze.getColumnBorders().getColumn2()[i].getHeight());
-         //      if (beetleRec.intersects(mazeBrickRec)){
-         //          return true;
-         //      }
-         //  }
-         //  for (int i = 0; i < maze.getColumnBorders().getColumn3().length; i++) {
-        //      Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn3()[i].getX(), maze.getColumnBorders().getColumn3()[i].getY(), maze.getColumnBorders().getColumn3()[i].getWidth(), maze.getColumnBorders().getColumn3()[i].getHeight());
-         //      if (beetleRec.intersects(mazeBrickRec)){
-         //          return true;
-         //      }
-         //  }
-         //  for (int i = 0; i < maze.getColumnBorders().getColumn4().length; i++) {
-         //     Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn4()[i].getX(), maze.getColumnBorders().getColumn4()[i].getY(), maze.getColumnBorders().getColumn4()[i].getWidth(), maze.getColumnBorders().getColumn4()[i].getHeight());
-         //      if (beetleRec.intersects(mazeBrickRec)){
-         //          return true;
-         //      }
-          // }
-         //  for (int i = 0; i < maze.getColumnBorders().getColumn5().length; i++) {
-         //     Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn5()[i].getX(), maze.getColumnBorders().getColumn5()[i].getY(), maze.getColumnBorders().getColumn5()[i].getWidth(), maze.getColumnBorders().getColumn5()[i].getHeight());
-         //      if (beetleRec.intersects(mazeBrickRec)){
-         //          return true;
-         //      }
-         //  }
+           for (int i = 0; i < maze.getRowBorders().getRow1().length; i++) {
+             Rectangle mazeBrickRec = new Rectangle(maze.getRowBorders().getRow1()[i].getX(), maze.getRowBorders().getRow1()[i].getY(), maze.getRowBorders().getRow1()[i].getWidth(), maze.getRowBorders().getRow1()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                  return true;
+               }
+          }
+           for (int i = 0; i < maze.getRowBorders().getRow2().length; i++) {
+             Rectangle  mazeBrickRec = new Rectangle(maze.getRowBorders().getRow2()[i].getX(), maze.getRowBorders().getRow2()[i].getY(), maze.getRowBorders().getRow2()[i].getWidth(), maze.getRowBorders().getRow2()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                   return true;
+               }
+           }
+           for (int i = 0; i < maze.getRowBorders().getRow3().length; i++) {
+              Rectangle mazeBrickRec = new Rectangle(maze.getRowBorders().getRow3()[i].getX(), maze.getRowBorders().getRow3()[i].getY(), maze.getRowBorders().getRow3()[i].getWidth(), maze.getRowBorders().getRow3()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                  return true;
+               }
+           }
+           for (int i = 0; i < maze.getRowBorders().getRow4().length; i++) {
+             Rectangle mazeBrickRec = new Rectangle(maze.getRowBorders().getRow4()[i].getX(), maze.getRowBorders().getRow4()[i].getY(), maze.getRowBorders().getRow4()[i].getWidth(),maze.getRowBorders().getRow4()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                   return true;
+               }
+           }
+           for (int i = 0; i < maze.getColumnBorders().getColumn1().length; i++) {
+             Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn1()[i].getX(), maze.getColumnBorders().getColumn1()[i].getY(), maze.getColumnBorders().getColumn1()[i].getWidth(), maze.getColumnBorders().getColumn1()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                   return true;
+               }
+           }
+          for (int i = 0; i < maze.getColumnBorders().getColumn2().length; i++) {
+              Rectangle  mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn2()[i].getX(), maze.getColumnBorders().getColumn2()[i].getY(), maze.getColumnBorders().getColumn2()[i].getWidth(), maze.getColumnBorders().getColumn2()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                   return true;
+               }
+           }
+           for (int i = 0; i < maze.getColumnBorders().getColumn3().length; i++) {
+              Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn3()[i].getX(), maze.getColumnBorders().getColumn3()[i].getY(), maze.getColumnBorders().getColumn3()[i].getWidth(), maze.getColumnBorders().getColumn3()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                  return true;
+               }
+           }
+           for (int i = 0; i < maze.getColumnBorders().getColumn4().length; i++) {
+              Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn4()[i].getX(), maze.getColumnBorders().getColumn4()[i].getY(), maze.getColumnBorders().getColumn4()[i].getWidth(), maze.getColumnBorders().getColumn4()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                  return true;
+              }
+           }
+           for (int i = 0; i < maze.getColumnBorders().getColumn5().length; i++) {
+              Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn5()[i].getX(), maze.getColumnBorders().getColumn5()[i].getY(), maze.getColumnBorders().getColumn5()[i].getWidth(), maze.getColumnBorders().getColumn5()[i].getHeight());
+               if (beetleRec.intersects(mazeBrickRec)){
+                  return true;
+               }
+           }
         return false;
     }
     public void mainGameLoop(){

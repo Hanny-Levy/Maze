@@ -45,20 +45,20 @@ import java.awt.*;
         return y;
     }
     public void moveUp(){
-        this.y -= Definitions.BEETLE_HEIGHT/4;
+        this.y -= this.getHeight()/4;
         moves++;
     }
 
     public void moveDown(){
-        this.y += Definitions.BEETLE_HEIGHT/4;
+        this.y += this.getHeight()/4;
         moves++;
     }
     public void moveRight(){
-        this.x += Definitions.BEETLE_WIDTH/4;
+        this.x += this.getWidth()/4;
         moves++;
     }
     public void moveLeft(){
-        this.x -= Definitions.BEETLE_WIDTH/4;
+        this.x -= this.getWidth()/4;
         moves++;
     }
 
@@ -69,4 +69,11 @@ import java.awt.*;
     public void setMoves() {
         this.moves = 0;
     }
+    public int getWidth(){
+        return this.beetle.getIconWidth();
+    }
+    public int getHeight(){
+        return this.beetle.getIconHeight();
+    }
+
 }
