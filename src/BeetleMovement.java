@@ -5,8 +5,10 @@ public class BeetleMovement implements KeyListener {
     private Beetle beetle;
 
 
+
     public BeetleMovement(Beetle beetle) {
-        this.beetle = beetle;
+        this.beetle =beetle;
+
     }
 
     public void keyTyped(KeyEvent e) {

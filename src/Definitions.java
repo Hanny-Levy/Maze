@@ -6,7 +6,7 @@ public class Definitions {
     public static final int BUTTON_WIDTH=100;
     public static final int BUTTON_HEIGHT= 50;
 
-    public static final int BEETLE_STARTING_X=75;
+    public static final int BEETLE_STARTING_X=90;
     public static final int BEETLE_STARTING_Y=120;
     public static final int BEETLE_WIDTH=70;
     public static final int BEETLE_HEIGHT=51;

@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-public class Beetle  {
+    public class Beetle  {
     private ImageIcon beetle;
     private int x ;
     private int y ;
