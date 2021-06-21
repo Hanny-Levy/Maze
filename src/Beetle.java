@@ -7,7 +7,7 @@ import java.awt.*;
     private int moves;
 
     public Beetle(int x , int y) {
-        this.beetle=new ImageIcon("images/beetle.jpg");
+        this.beetle=new ImageIcon("images/beetle1.png");
         this.x =x ;
         this.y=y;
         this.setMoves();
@@ -54,11 +54,11 @@ import java.awt.*;
         moves++;
     }
     public void moveRight(){
-        this.x += this.getWidth()/4;
+        this.x += this.getHeight()/4;
         moves++;
     }
     public void moveLeft(){
-        this.x -= this.getWidth()/4;
+        this.x -= this.getHeight()/4;
         moves++;
     }
 

@@ -21,12 +21,12 @@ public class BeetleMovement implements KeyListener {
 
         if (keyCode==keyEvent.VK_RIGHT&&mazeScene.collision(this.beetle, mazeScene.getMaze())==false)
             this.beetle.moveRight();
-
         else  this.beetle.moveLeft();
+
         if (keyCode == keyEvent.VK_LEFT&&mazeScene.collision(this.beetle, mazeScene.getMaze())==false)
             this.beetle.moveLeft();
-
         else this.beetle.moveRight();
+
         if (keyCode == keyEvent.VK_DOWN&&mazeScene.collision(this.beetle, mazeScene.getMaze())==false)
             this.beetle.moveDown();
             else this.beetle.moveUp();
