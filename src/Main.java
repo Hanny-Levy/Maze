@@ -19,7 +19,6 @@ public class Main extends JFrame {
         this.add(mazeScene);
         BeetleMovement beetleMovement = new BeetleMovement(mazeScene.getBeetle(),mazeScene);
             this.addKeyListener(beetleMovement);
-        System.out.println(mazeScene.getBeetle().getWidth() +""+mazeScene.getBeetle().getHeight());
         }
 
 

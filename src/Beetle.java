@@ -7,7 +7,7 @@ import java.awt.*;
     private int moves;
 
     public Beetle(int x , int y) {
-        this.beetle=new ImageIcon("images/beetle1.png");
+        this.beetle=new ImageIcon("images/beetle.jpg");
         this.x =x ;
         this.y=y;
         this.setMoves();
