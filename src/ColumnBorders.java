@@ -23,7 +23,7 @@ public class ColumnBorders extends JPanel {
         setColumn2();
         setColumn3();
         setColumn4();
-        setColumn5();
+
 
     }
 
@@ -35,7 +35,7 @@ public class ColumnBorders extends JPanel {
         this.printColumn2(g);
         this.printColumn3(g);
         this.printColumn4(g);
-        this.printColumn5(g);
+
 
     }
 
@@ -105,7 +105,7 @@ public class ColumnBorders extends JPanel {
             this.column4[i]=new Brick(this.x,this.y,this.width,this.height);
         this.column4[1].setX(Definitions.MAZE_WIDTH_BORDERS+Definitions.space+Definitions.MAZE_WIDTH_BORDERS/2);
         this.column4[2].setX(this.column4[1].getX()+Definitions.MAZE_WIDTH_BORDERS);
-        this.column4[2].setHeight(this.column1[1].getHeight()+12);
+        this.column4[2].setHeight(this.column1[1].getHeight()+5);
 
     }
 
@@ -115,20 +115,7 @@ public class ColumnBorders extends JPanel {
             this.column4[i].print(g);
     }
 
-    public void setColumn5(){
-        this.setColumn4();
-        this.width=Definitions.MAZE_HEIGHT;
-        this.y=Definitions.MAZE_ENDING_Y-Definitions.MAZE_STARTING_Y+8;
-        this.x=this.column1[0].getX()+Definitions.space/4+15;
-        this.height=this.column1[1].getHeight();
-            this.column5[0]=new Brick(this.x,this.y,this.width,this.height);
-    }
 
-    public void printColumn5(Graphics g) {
-        this.setColumn5();
-        for (int i=0; i<this.column5.length;i++)
-            this.column5[i].print(g);
-    }
 
     public Brick[] getColumn1() {
         return column1;
@@ -146,7 +133,4 @@ public class ColumnBorders extends JPanel {
         return column4;
     }
 
-    public Brick[] getColumn5() {
-        return column5;
-    }
 }

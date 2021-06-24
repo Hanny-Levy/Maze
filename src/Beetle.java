@@ -76,4 +76,12 @@ import java.awt.*;
         return this.beetle.getIconHeight();
     }
 
+    public boolean finishGame(){
+        if(this.getY()>=528&& this.getX()>=913)
+            return true;
+        else return false;
+    }
+
+
+
 }

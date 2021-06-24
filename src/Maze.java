@@ -34,7 +34,7 @@ public class Maze extends JPanel {
         }
         outBorders[1].setWidth(outBorders[1].getHeight());
         outBorders[1].setHeight(Definitions.MAZE_ENDING_Y-Definitions.MAZE_STARTING_Y);
-        outBorders[2].setY(Definitions.MAZE_ENDING_Y);outBorders[2].setWidth(Definitions.MAZE_WIDTH-Definitions.BEETLE_WIDTH);
+        outBorders[2].setY(Definitions.MAZE_ENDING_Y);outBorders[2].setWidth(Definitions.MAZE_WIDTH-Definitions.BEETLE_WIDTH*2);
         outBorders[3].setX(outBorders[3].getX()+outBorders[3].getWidth());outBorders[3].setWidth(outBorders[3].getHeight());outBorders[3].setHeight(Definitions.MAZE_ENDING_Y-Definitions.MAZE_STARTING_Y);
 
     }

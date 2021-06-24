@@ -5,6 +5,7 @@ public class MazeScene extends JPanel {
     private Maze maze ;
     private Beetle beetle;
     private JLabel moveCounter;
+    private JLabel finish;
 
     public MazeScene() {
     this.setDoubleBuffered(true);
@@ -15,6 +16,13 @@ public class MazeScene extends JPanel {
     this.add(moveCounter);
     this.maze=new Maze();
     this.beetle=new Beetle(Definitions.BEETLE_STARTING_X,Definitions.BEETLE_STARTING_Y);
+        if (this.beetle.finishGame()){
+            this.finish =new JLabel("GOOD JOB!");
+            this.finish.setBounds(Definitions.BUTTON_WIDTH , 0, Definitions.MOVES_COUNTER_LABEL_WIDTH, Definitions.MOVES_COUNTER_LABEL_HEIGHT );
+            this.finish.setForeground(Color.RED);
+            this.add(this.finish);
+        }
+
 
     this.mainGameLoop();
     }
@@ -93,14 +101,7 @@ public class MazeScene extends JPanel {
                   return true;
               }
            }
-           for (int i = 0; i < maze.getColumnBorders().getColumn5().length; i++) {
-              Rectangle mazeBrickRec = new Rectangle(maze.getColumnBorders().getColumn5()[i].getX(), maze.getColumnBorders().getColumn5()[i].getY(), maze.getColumnBorders().getColumn5()[i].getWidth(), maze.getColumnBorders().getColumn5()[i].getHeight());
-               if (beetleRec.intersects(mazeBrickRec)){
-                   System.out.println("Beetle x "+beetleRec.getX()+"  y "+beetleRec.getY()+ " width "+beetleRec.getWidth() + " height "+beetleRec.getHeight());
-                   System.out.println("Rec x "+mazeBrickRec.getX()+"  y "+mazeBrickRec.getY()+ " width "+mazeBrickRec.getWidth() + " height "+mazeBrickRec.getHeight());
-                  return true;
-               }
-           }
+
         return false;
     }
     public void mainGameLoop(){
@@ -112,6 +113,7 @@ public class MazeScene extends JPanel {
                     this.moveCounter.setText("Moves: " + this.beetle.getMoves() );
 
                     Thread.sleep(25);
+
                 }
                 catch (InterruptedException exception){
                     exception.printStackTrace();
